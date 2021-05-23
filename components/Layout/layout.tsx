@@ -18,10 +18,10 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     content: {
       flexGrow: 1,
-      padding: theme.spacing(3),
-      paddingLeft: 280,
+      // padding: theme.spacing(3),
+      // paddingLeft: 280,
       height: "100vh",
-      backgroundColor: "#ffffff",
+      // backgroundColor: "#ffffff",
       backgroundPosition: "bottom",
     },
   })
@@ -33,8 +33,9 @@ export default function Layout({ children }: Props): ReactElement {
     <React.Fragment>
       <Header />
       <main className={classes.content}>
-        <Toolbar />
-        <Container>{children}</Container>
+        {/* <Toolbar /> */}
+        {/* <Container maxWidth="xl">{children}</Container> */}
+        {children}
       </main>
       <Footer
         style={{

@@ -1,5 +1,5 @@
 export interface MenuType {
   title: string;
-  icon: any;
+  icon?: any;
   path: string;
 }

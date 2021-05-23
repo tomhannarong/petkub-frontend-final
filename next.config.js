@@ -1,4 +1,5 @@
 require("dotenv").config();
+const withFonts = require("next-fonts");
 
 module.exports = {
   env: {
@@ -13,3 +14,5 @@ module.exports = {
     return config;
   },
 };
+
+module.exports = withFonts();

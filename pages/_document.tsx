@@ -1,13 +1,14 @@
-import Document, { Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheets } from "@material-ui/core";
 import React from "react";
 
 export default class PetkubDoc extends Document {
   render() {
     return (
-      <html>
+      <Html>
         <Head>
           <meta charSet="utf-8" />
+
           <link
             rel="shortcut icon"
             type="image/x-icon"
@@ -26,11 +27,11 @@ export default class PetkubDoc extends Document {
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
           />
         </Head>
-        <body style={{ backgroundColor: "#f1f1f1" }}>
+        <body>
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }
