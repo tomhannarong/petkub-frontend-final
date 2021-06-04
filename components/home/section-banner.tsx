@@ -28,6 +28,27 @@ export default function SectionBanner({}: Props): ReactElement {
   const path_11_Ref = useRef(null);
   const path_12_Ref = useRef(null);
 
+  const stylesSpringMarker_12 = useSpring({
+    loop: { reverse: true },
+    // from: { y: 0 },
+    // config: { duration: 2000, mass: 1, tension: 210, friction: 5 },
+    // to: { y: -20 },
+    // delay: 100,
+  });
+  const stylesSpringMarker_9 = useSpring({
+    loop: { reverse: true },
+    // from: { y: 0 },
+    // config: { duration: 1000, mass: 1, tension: 210, friction: 5 },
+    // to: { y: -40 },
+    // delay: 100,
+  });
+  const stylesSpringMarker_10 = useSpring({
+    loop: { reverse: true },
+    // from: { y: 0 },
+    // config: { duration: 4000, mass: 1, tension: 210, friction: 5 },
+    // to: { y: -30 },
+    // delay: 100,
+  });
   useEffect(() => {
     gsap.from(cityRef.current, {
       duration: 1.5,
@@ -191,24 +212,34 @@ export default function SectionBanner({}: Props): ReactElement {
                 />
               </Button>
             </Link>
-            <img
+            <animated.img
+              style={{
+                ...stylesSpringMarker_12,
+              }}
               ref={marker_12_Ref}
               src="/static/img/home-building-location-group-12.png"
               alt="location_12"
               className={classes.location_12_style}
-            />
-            <img
+            ></animated.img>
+
+            <animated.img
+              style={{
+                ...stylesSpringMarker_9,
+              }}
               ref={marker_9_Ref}
               src="/static/img/home-building-location-group-9.png"
               alt="location_9"
               className={classes.location_9_style}
-            />
-            <img
+            ></animated.img>
+            <animated.img
+              style={{
+                ...stylesSpringMarker_10,
+              }}
               ref={marker_10_Ref}
               src="/static/img/home-building-location-group-10.png"
               alt="location_10"
               className={classes.location_10_style}
-            />
+            ></animated.img>
             <img
               ref={dog_Ref}
               src="/static/img/home-dog.png"

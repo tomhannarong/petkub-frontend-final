@@ -8,7 +8,7 @@ export default (theme: Theme) =>
     section_style: {
       backgroundColor: "#FFFFFF",
       paddingTop: theme.spacing(5),
-      paddingBottom: theme.spacing(20),
+      paddingBottom: theme.spacing(15),
     },
     h1_style: {
       color: "#343D48",
@@ -24,67 +24,6 @@ export default (theme: Theme) =>
       fontWeight: "bold",
       fontStyle: "italic",
     },
-    bg_white: {
-      backgroundColor: "#FFFFFF",
-      borderRadius: 20,
-    },
-    card_container: {
-      position: "absolute",
-      left: "50%",
-      top: 920,
-      // minWidth: 1200,
-      transform: "translate(-50%, -50%)",
-      zIndex: 5,
-    },
-
-    card: {
-      position: "relative",
-      display: "flex",
-      flexDirection: "column",
-      borderRadius: 20,
-      width: 350,
-      height: "100%",
-      // backgroundColor: "#FFFFFF",
-      textAlign: "center",
-      justifyContent: "center",
-      alignContent: "center",
-      padding: 15,
-      zIndex: 5,
-      boxShadow:
-        "rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px",
-      "&:hover": {
-        backgroundColor: "#16DE74",
-        "& $card_header_text": {
-          color: "white",
-        },
-        "& $card_subtitle": {
-          color: "white",
-        },
-      },
-    },
-    card_img: {
-      width: "100%",
-      height: 200,
-      objectFit: "none",
-      background: "url('/static/img/home-background-card.png')",
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "auto",
-      backgroundPosition: "center top",
-      overflow: "hidden",
-    },
-    card_header_text: {
-      color: "#343D48",
-      fontSize: 30,
-      fontFamily: "Comfortaa",
-      fontWeight: "bold",
-      marginBottom: 15,
-    },
-    card_subtitle: {
-      color: "#909090",
-      fontSize: 20,
-      fontFamily: "Comfortaa",
-      fontWeight: "bold",
-    },
 
     container_2: {
       position: "relative",
@@ -96,7 +35,7 @@ export default (theme: Theme) =>
       fontSize: 52,
       fontFamily: "Comfortaa",
       fontWeight: "bold",
-      marginBottom: 15,
+      marginBottom: 30,
     },
     div_header: {
       // width: "100%",
@@ -108,5 +47,21 @@ export default (theme: Theme) =>
       backgroundSize: "auto",
       backgroundPosition: "left top",
       overflow: "hidden",
+    },
+
+    carousel_button: {
+      borderRadius: 100,
+      backgroundColor: "white",
+    },
+    carousel_style: {
+      // marginBottom: 50,
+      // marginTop: 50,
+    },
+    carousel_icon: {
+      color: "#16DE74",
+      fontSize: 40,
+    },
+    carousel_icon_disable: {
+      fontSize: 40,
     },
   });

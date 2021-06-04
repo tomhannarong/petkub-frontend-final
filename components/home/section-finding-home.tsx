@@ -1,114 +1,28 @@
 import React, { ReactElement, useRef, useEffect } from "react";
+import ReactDOM from "react-dom";
 import Link from "next/link";
 import Router, { useRouter } from "next/router";
 import { makeStyles } from "@material-ui/core/styles";
 import styles from "./../../styles/component-home-styles/section-finding-home.style";
-import { Box, Card, Container, Grid, Typography } from "@material-ui/core";
+import { Card, Container, Grid, Typography } from "@material-ui/core";
+
+import FindingHomeCarousel from "./section-finding-home-carousel";
+import FindingHomeSelector from "./section-finding-home-selector";
 
 interface Props {}
 const useStyles = makeStyles(styles);
 export default function SectionFindingHome({}: Props): ReactElement {
   const classes = useStyles();
+  let carouselRef = useRef();
+
+  useEffect(() => {
+    ReactDOM.render(<FindingHomeCarousel />, carouselRef.current);
+  }, []);
+
   return (
     <section className={classes.section_style}>
-      <Container maxWidth="lg" className={classes.card_container}>
-        <div>
-          <Grid
-            container
-            spacing={0}
-            direction="row"
-            justify="space-around"
-            alignItems="center"
-          >
-            <Link href="/find-pets">
-              <a href="#" className={classes.bg_white}>
-                <Card className={classes.card}>
-                  <img
-                    src="/static/img/home-find-icon.png"
-                    alt="find-icon"
-                    className={classes.card_img}
-                  />
-                  <Typography
-                    variant="h1"
-                    noWrap
-                    align="center"
-                    className={classes.card_header_text}
-                  >
-                    Find pets
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    noWrap
-                    align="center"
-                    className={classes.card_subtitle}
-                  >
-                    Browse pets reported missing <br />
-                    by their owner.
-                  </Typography>
-                </Card>
-              </a>
-            </Link>
-            <Link href="/found-pets">
-              <a href="#" className={classes.bg_white}>
-                <Card className={classes.card}>
-                  <img
-                    src="/static/img/home-found-icon.png"
-                    alt="found-icon"
-                    className={classes.card_img}
-                  />
-                  <Typography
-                    variant="h1"
-                    noWrap
-                    align="center"
-                    className={classes.card_header_text}
-                  >
-                    Found pets
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    noWrap
-                    align="center"
-                    className={classes.card_subtitle}
-                  >
-                    Look through pets reported found <br />
-                    by members of the public.
-                  </Typography>
-                </Card>
-              </a>
-            </Link>
-            <Link href="/free-pets">
-              <a href="#" className={classes.bg_white}>
-                <Card className={classes.card}>
-                  <img
-                    src="/static/img/home-free-icon.png"
-                    alt="free-icon"
-                    className={classes.card_img}
-                  />
-                  <Typography
-                    variant="h1"
-                    noWrap
-                    align="center"
-                    className={classes.card_header_text}
-                  >
-                    Free pets
-                  </Typography>
-                  <Typography
-                    variant="body1"
-                    gutterBottom
-                    noWrap
-                    align="center"
-                    className={classes.card_subtitle}
-                  >
-                    Look through free pets
-                    <br />
-                    by members of the public.
-                  </Typography>
-                </Card>
-              </a>
-            </Link>
-          </Grid>
-        </div>
-      </Container>
+      <FindingHomeSelector />
+
       <Container maxWidth="lg" className={classes.container_2}>
         <Grid
           container
@@ -128,36 +42,7 @@ export default function SectionFindingHome({}: Props): ReactElement {
           </div>
         </Grid>
 
-        <Grid
-          container
-          spacing={2}
-          direction="row"
-          justify="space-around"
-          alignItems="center"
-        >
-          <Typography
-            variant="body1"
-            gutterBottom
-            noWrap
-            align="center"
-            className={classes.card_subtitle}
-          >
-            Look through free pets
-            <br />
-            by members of the public.
-          </Typography>
-          <Typography
-            variant="body1"
-            gutterBottom
-            noWrap
-            align="center"
-            className={classes.card_subtitle}
-          >
-            Look through free pets
-            <br />
-            by members of the public.
-          </Typography>
-        </Grid>
+        <div ref={carouselRef}></div>
       </Container>
     </section>
   );
